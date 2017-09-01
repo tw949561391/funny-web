@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-12">
+        <h2>动态图</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 p-3"
+           *ngFor="let i of [1,2,3,4,5,6,7,2,13,1,23,12,3,12,31,23,12,31,23,12,3,12,31,2,12,4,1,231,23,12,31,231,23,12,31,4,23,423,4,12,312,31,2,31,41,23,12,41,21,412,4]">
+        <md-card class="item " style="width: 100%">
+          <img md-card-image height="200" width="auto"
+               [src]="i%2==0?'https://image.uczzd.cn/9788828387506548678.jpg?id=0&from=export&width=170&height=109':'https://material.angular.io/assets/img/examples/shiba2.jpg'">
+          <md-card-content>
+            The Shiba Inu is the
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-md-3">
+    <div class="row">
+      <div class="col-12 p-1 fix">
+        <md-list>
+          <h3 md-subheader>Folders</h3>
+          <md-list-item md-list-avatar routerLink="/home" routerLinkActive="active">
+            <h4 md-line>每日推荐</h4>
+            <p md-line > 每天更新最新的热点信息每天... </p>
+          </md-list-item>
+          <md-list-item routerLink="/joke-text" routerLinkActive="active">
+            <h4 md-line>段子</h4>
+            <p md-line> 笑话信息 </p>
+          </md-list-item>
+          <md-list-item routerLink="/joke-gif" routerLinkActive="active">
+            <h4 md-line>动态图</h4>
+            <p md-line> 搞笑邪恶动态图 </p>
+          </md-list-item>
+          <md-list-item routerLink="/game-lol" routerLinkActive="active">
+            <h4 md-line>英雄联盟</h4>
+            <p md-line> 最新解说视频 </p>
+          </md-list-item>
+          <md-list-item routerLink="/top-news" routerLinkActive="active">
+            <h4 md-line>头条</h4>
+            <p md-line> 每天更新最新的热点信息 </p>
+          </md-list-item>
+          <md-divider></md-divider>
+        </md-list>
+      </div>
+    </div>
+
+  </div>
+</div>
+

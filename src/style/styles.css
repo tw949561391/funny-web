@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+/* line 1, _reset.scss */
+.box-shadow {
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+/* line 8, styles.scss */
+html, body, app-root, md-sidenav-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}

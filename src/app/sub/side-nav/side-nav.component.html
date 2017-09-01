@@ -1,0 +1,25 @@
+<md-list>
+  <h3 md-subheader>Folders</h3>
+  <md-list-item routerLink="/home" routerLinkActive="active">
+    <h4 md-line>每日推荐</h4>
+    <p md-line> 每天更新最新的热点信息 </p>
+  </md-list-item>
+  <md-list-item routerLink="/jokes" routerLinkActive="active">
+    <h4 md-line>段子</h4>
+    <p md-line> 笑话信息 </p>
+  </md-list-item>
+  <md-list-item routerLink="/game-lol" routerLinkActive="active">
+    <h4 md-line>英雄联盟</h4>
+    <p md-line> 最新解说视频 </p>
+  </md-list-item>
+  <md-list-item routerLink="/top-news" routerLinkActive="active">
+    <h4 md-line>头条</h4>
+    <p md-line> 每天更新最新的热点信息 </p>
+  </md-list-item>
+  <md-divider></md-divider>
+  <h3 md-subheader>Notes</h3>
+  <md-list-item *ngFor="let note of notes">
+    <h4 md-line>{{note.name}}</h4>
+    <p md-line> {{note.updated | date}} </p>
+  </md-list-item>
+</md-list>

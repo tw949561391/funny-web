@@ -1,0 +1,16 @@
+@import "compass/css3";
+
+md-sidenav {
+  width: 220px;
+  z-index: 100;
+}
+
+.sidenav-content {
+  position: fixed;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 220px;
+  overflow-y: scroll;
+  z-index: 999;
+}

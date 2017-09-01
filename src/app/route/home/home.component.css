@@ -1,0 +1,9 @@
+/* line 1, home.component.scss */
+.example-card {
+  width: 400px;
+}
+
+/* line 5, home.component.scss */
+.example-header-image {
+  background-size: cover;
+}

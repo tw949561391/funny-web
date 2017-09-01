@@ -1,0 +1,16 @@
+/* line 3, app.component.scss */
+md-sidenav {
+  width: 220px;
+  z-index: 100;
+}
+
+/* line 8, app.component.scss */
+.sidenav-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 220px;
+  overflow-y: scroll;
+  z-index: 999;
+}

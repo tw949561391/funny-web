@@ -1,0 +1,12 @@
+/* line 1, side-nav.component.scss */
+md-list-item {
+  cursor: pointer;
+}
+/* line 3, side-nav.component.scss */
+md-list-item.active {
+  border-left: 2px solid red;
+}
+/* line 6, side-nav.component.scss */
+md-list-item:hover {
+  background-color: #eee;
+}

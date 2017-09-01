@@ -1,0 +1,6 @@
+/* line 1, float-btns.component.scss */
+.float_button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

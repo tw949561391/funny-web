@@ -1,0 +1,10 @@
+md-list-item {
+  cursor: pointer;
+  &.active {
+    border-left: 2px solid red;
+  }
+  &:hover{
+    background-color: #eee;
+  }
+}
+

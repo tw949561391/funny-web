@@ -1,0 +1,33 @@
+<md-card class="p-1 head-nav">
+  <button md-button class="rout-nav" *ngFor="let item of types" [routerLink]="['/jokes/',item.type]"
+          routerLinkActive="bg-danger">
+    {{item.name}}
+  </button>
+</md-card>
+<div class="row">
+
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="col-md-3">
+    <div class="row">
+      <md-card class="col-12 p-2">
+        <md-list>
+          <div md-subheader>
+            <h5>精彩推荐</h5></div>
+          <md-list-item md-list-avatar *ngFor="let item of  jokesList">
+            <div md-list-icon class="p-0 img-thumbnail"
+                 style="width: 120px;height: 60px;overflow: hidden;border-radius: 0">
+              <img [src]="item.pics[0]" width="100%">
+            </div>
+            <h5 md-line>{{item.title}}</h5>
+            <p md-line> {{item.text}}... </p>
+          </md-list-item>
+        </md-list>
+      </md-card>
+    </div>
+  </div>
+</div>
+
+
+
