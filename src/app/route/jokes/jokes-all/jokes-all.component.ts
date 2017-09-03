@@ -1,7 +1,7 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {JokerService} from "../../../service/joker.service";
-import {isNullOrUndefined} from "util";
+import {MdSnackBar} from "@angular/material";
 
 
 @Component({
@@ -23,16 +23,16 @@ export class JokesAllComponent implements OnInit {
 
   jokesList: Array<any> = new Array();
 
-  constructor(private activeRoute: ActivatedRoute, private router: Router, private jokeService: JokerService) {
-    // if (router.events.subscribe) {
-    //   router.events.distinctUntilChanged();
-    // }
+  constructor(private activeRoute: ActivatedRoute,
+              private jokeService: JokerService,
+              private snakeBar:MdSnackBar) {
+
   }
 
   ngOnInit() {
     this.activeRoute.params.subscribe((params) => {
       this.jokesList = [];
-      this.pagework = {pageNum: 0, pageSize: 10};
+      this.pagework = {pageNum: 0, pageSize: 20};
       this.type = Number.parseInt(params['type']);
       this.title = params['title'];
       this.startTime = new Date();
@@ -59,6 +59,7 @@ export class JokesAllComponent implements OnInit {
       this.jokeService.praiseJoke(joke._id).subscribe(res => {
         joke.praise = res.praise;
         joke.isPraise = true;
+        this.snakeBar.open("已点赞！！",null,{duration:1000})
       })
     }
   }

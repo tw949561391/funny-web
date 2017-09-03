@@ -1,13 +1,12 @@
 <md-sidenav-container>
-  <md-sidenav #sidenav opened="true" mode="side" class="box-shadow">
+  <md-sidenav #sidenav opened="true" mode="side">
     <app-side-nav></app-side-nav>
   </md-sidenav>
 </md-sidenav-container>
+<md-toolbar class="fixed-top p-0 head-nav" color="primary" style="z-index: 1000">My App</md-toolbar>
 <div class="sidenav-content">
-  <div class="container-fluid" style="margin-top: 70px">
-    <div class="row m-lg-5 m-md-3 m-sm-1">
-      <router-outlet></router-outlet>
-    </div>
+  <div class="container-fluid pl-3 pr-4" style="margin-top: 64px">
+    <router-outlet></router-outlet>
   </div>
 </div>
 <app-float-btns></app-float-btns>

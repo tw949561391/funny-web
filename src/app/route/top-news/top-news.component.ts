@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
+import {JokerService} from "../../service/joker.service";
 
 @Component({
   selector: 'app-top-news',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNewsComponent implements OnInit {
 
-  constructor() { }
+  types = [];
+  select: string;
 
-  ngOnInit() {
+  constructor(private router: Router, private jokeService: JokerService) {
   }
 
+  ngOnInit() {
+    this.jokeService.getAllTypes().subscribe((res) => {
+      this.types = res;
+
+    });
+  }
+
+
+  typeChange($event) {
+    this.router.navigate(['/top-news/list', $event]);
+  }
 }

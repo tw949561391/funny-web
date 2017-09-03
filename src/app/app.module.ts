@@ -5,10 +5,11 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AppRoute} from "./app.route";
 import 'hammerjs';
-import {MdButtonModule, MdIconModule, MdListModule, MdSidenavModule} from "@angular/material";
+import {MaterialModule, MdButtonModule, MdIconModule, MdListModule, MdSidenavModule} from "@angular/material";
 import {HttpModule} from "@angular/http";
 import {SideNavComponent} from "./sub/side-nav/side-nav.component";
 import {FloatBtnsComponent} from "./sub/float-btns/float-btns.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,10 +21,7 @@ import {FloatBtnsComponent} from "./sub/float-btns/float-btns.component";
     HttpModule,
     BrowserAnimationsModule,
     AppRoute,
-    MdSidenavModule,
-    MdButtonModule,
-    MdListModule,
-    MdIconModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

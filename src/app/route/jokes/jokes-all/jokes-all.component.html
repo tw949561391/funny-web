@@ -1,43 +1,43 @@
-<div class="col-md-12">
-  <md-card class="col-12 m-0 mb-4" *ngFor="let item of  jokesList">
-    <md-card-title><h5 [innerHtml]="item.title"></h5></md-card-title>
-    <md-card-content>
-      <div *ngIf="item.text"
-           [innerHtml]="item.text"></div>
-    </md-card-content>
-    <md-card-content class="text-center">
-      <img class="img-fluid " *ngFor="let pic of item.pics" [src]="pic">
-    </md-card-content>
-    <md-card-actions style="border-top: 1px solid #eee" class="text-right">
-      <button md-button (click)="praiseJoke(item)" mdTooltip="{{item.isPraise?'已赞':''}}"
-              [disabled]="item.isPraise"
-              [tooltip-position]="'above'">
-        <md-icon svgIcon="like" [ngClass]="{'text-danger':item.isPraise}"></md-icon>
-        {{item.praise?item.praise:0}}
-      </button>
-      <button md-button [mdMenuTriggerFor]="menu">
-        <md-icon svgIcon="share"></md-icon>
-        分享
-        <md-menu #menu="mdMenu" yPosition="above" xPosition="before">
-          <button md-menu-item (click)="sharetoqq(item,'localhost/index.html')">
-            <span>QQ空间</span>
-          </button>
-          <button md-menu-item disabled>
-            <span>Check voicemail</span>
-          </button>
-          <button md-menu-item>
-            <span>Disable alerts</span>
-          </button>
-        </md-menu>
-      </button>
-      <button class="float-left" md-button>{{item.create_time|date:'MM月dd日 HH:mm'}}</button>
-    </md-card-actions>
-  </md-card>
+<div class="row">
+  <div class="col-md-4 p-3" *ngFor="let item of  jokesList">
+    <md-card>
+      <md-card-title><h6 [innerHtml]="item.title"></h6></md-card-title>
+      <md-card-content>
+        <div *ngIf="item.text"
+             [innerHtml]="item.text"></div>
+      </md-card-content>
+
+      <img md-card-image *ngFor="let pic of item.pics" [src]="pic">
+      <md-card-actions  class="text-right">
+        <button class="pl-1 pr-1" md-button (click)="praiseJoke(item)"
+                [disabled]="item.isPraise" >
+          <md-icon svgIcon="like" [ngClass]="{'text-danger':item.isPraise}"></md-icon>
+          {{item.praise?item.praise:0}}
+        </button>
+        <button md-icon-button [mdMenuTriggerFor]="menu">
+          <md-icon svgIcon="share"></md-icon>
+          <md-menu #menu="mdMenu" yPosition="above" xPosition="before">
+            <button md-menu-item (click)="sharetoqq(item,'localhost/index.html')">
+              <span>QQ空间</span>
+            </button>
+            <button md-menu-item>
+              <span>Check voicemail</span>
+            </button>
+            <button md-menu-item>
+              <span>Disable alerts</span>
+            </button>
+          </md-menu>
+        </button>
+        <label  class="float-left p-1" >{{item.create_time|date:'MM月dd日 HH:mm'}}</label>
+      </md-card-actions>
+    </md-card>
+  </div>
+  <div class="col-md-12 d-flex justify-content-center">
+    <md-spinner style="width: 50px" (click)="getJokeList()"></md-spinner>
+  </div>
+
 </div>
-<div class="col-md-12 text-center">
-  <button md-button (click)="getJokeList()">
-    <md-spinner></md-spinner>
-  </button>
-</div>
+
+
 
 

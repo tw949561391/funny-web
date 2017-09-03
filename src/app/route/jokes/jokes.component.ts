@@ -24,4 +24,10 @@ export class JokesComponent implements OnInit {
     });
   }
 
+
+
+  typeChange($event){
+    this.router.navigate(['/jokes',$event]);
+  }
+
 }
